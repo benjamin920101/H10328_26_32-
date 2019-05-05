@@ -3,7 +3,7 @@
     Dim player1 As New WMPLib.WindowsMediaPlayer
     Dim player2 As New WMPLib.WindowsMediaPlayer
     Dim replay As Integer
-    Dim name_in As String = "0"
+    Dim name_in As String = "_"
 
     Sub hit_sound() '攻擊時的聲音的副程式
         player2.URL = My.Application.Info.DirectoryPath & "\hit.mp3"
