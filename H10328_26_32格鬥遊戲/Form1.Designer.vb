@@ -41,29 +41,26 @@ Partial Class Form1
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(22, 31)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ProgressBar1.Location = New System.Drawing.Point(12, 21)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(442, 65)
+        Me.ProgressBar1.Size = New System.Drawing.Size(434, 43)
         Me.ProgressBar1.TabIndex = 0
         Me.ProgressBar1.Value = 100
         '
         'ProgressBar2
         '
-        Me.ProgressBar2.Location = New System.Drawing.Point(521, 31)
-        Me.ProgressBar2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ProgressBar2.Location = New System.Drawing.Point(462, 21)
         Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(456, 65)
+        Me.ProgressBar2.Size = New System.Drawing.Size(434, 43)
         Me.ProgressBar2.TabIndex = 1
         Me.ProgressBar2.Value = 100
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources._2
-        Me.PictureBox1.Location = New System.Drawing.Point(75, 125)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PictureBox1.Location = New System.Drawing.Point(50, 83)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(306, 335)
+        Me.PictureBox1.Size = New System.Drawing.Size(204, 223)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -71,10 +68,9 @@ Partial Class Form1
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources._3
-        Me.PictureBox2.Location = New System.Drawing.Point(539, 124)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PictureBox2.Location = New System.Drawing.Point(359, 83)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(328, 336)
+        Me.PictureBox2.Size = New System.Drawing.Size(219, 224)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
@@ -94,41 +90,39 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 10)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(13, 7)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(25, 18)
+        Me.Label1.Size = New System.Drawing.Size(17, 12)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "P1"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(518, 10)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(460, 6)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(25, 18)
+        Me.Label2.Size = New System.Drawing.Size(17, 12)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "P2"
         '
         'Timer3
         '
+        Me.Timer3.Interval = 30
         '
         'Timer4
         '
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(994, 626)
+        Me.ClientSize = New System.Drawing.Size(908, 545)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ProgressBar2)
         Me.Controls.Add(Me.ProgressBar1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Form1"
         Me.Text = "格鬥遊戲"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
