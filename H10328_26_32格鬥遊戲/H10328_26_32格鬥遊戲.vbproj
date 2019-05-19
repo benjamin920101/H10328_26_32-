@@ -193,6 +193,57 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k必殺.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k走1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k防.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k必殺後續.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k走2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未命名的圖片k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jjba-clocktower_10249_thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio必殺1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio必殺2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio走1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio走2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dio防.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

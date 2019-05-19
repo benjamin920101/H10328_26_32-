@@ -27,6 +27,74 @@ H10328_26_32格鬥遊戲
 	<summary>
   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
 </summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio1">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio2">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio必殺1">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio必殺2">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio走1">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio走2">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.dio防">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.jjba_clocktower_10249_thumb">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.k1">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.k2">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.k必殺">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.k必殺後續">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.k走1">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.k走2">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.k防">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.未命名的圖片k">
+	<summary>
+  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+</summary>
 </member><member name="T:WindowsApplication1.My.Resources.Resources">
 	<summary>
   用於查詢當地語系化字串等的強類型資源類別。
