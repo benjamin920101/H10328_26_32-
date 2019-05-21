@@ -36,23 +36,29 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList3 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList4 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList5 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList6 = New System.Windows.Forms.ImageList(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(12, 21)
+        Me.ProgressBar1.Location = New System.Drawing.Point(18, 32)
+        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(434, 43)
+        Me.ProgressBar1.Size = New System.Drawing.Size(651, 64)
         Me.ProgressBar1.TabIndex = 0
         Me.ProgressBar1.Value = 100
         '
         'ProgressBar2
         '
-        Me.ProgressBar2.Location = New System.Drawing.Point(462, 21)
+        Me.ProgressBar2.Location = New System.Drawing.Point(693, 32)
+        Me.ProgressBar2.Margin = New System.Windows.Forms.Padding(4)
         Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(434, 43)
+        Me.ProgressBar2.Size = New System.Drawing.Size(651, 64)
         Me.ProgressBar2.TabIndex = 1
         Me.ProgressBar2.Value = 100
         '
@@ -71,18 +77,20 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 7)
+        Me.Label1.Location = New System.Drawing.Point(20, 10)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(17, 12)
+        Me.Label1.Size = New System.Drawing.Size(25, 18)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "P1"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(460, 6)
+        Me.Label2.Location = New System.Drawing.Point(690, 9)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(17, 12)
+        Me.Label2.Size = New System.Drawing.Size(25, 18)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "P2"
         '
@@ -98,9 +106,10 @@ Partial Class Form1
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.未命名的圖片k
-        Me.PictureBox2.Location = New System.Drawing.Point(676, 348)
+        Me.PictureBox2.Location = New System.Drawing.Point(1014, 522)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(199, 162)
+        Me.PictureBox2.Size = New System.Drawing.Size(298, 243)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
@@ -109,9 +118,10 @@ Partial Class Form1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.dio
-        Me.PictureBox1.Location = New System.Drawing.Point(44, 261)
+        Me.PictureBox1.Location = New System.Drawing.Point(66, 392)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(131, 249)
+        Me.PictureBox1.Size = New System.Drawing.Size(196, 374)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -125,19 +135,46 @@ Partial Class Form1
         Me.ImageList2.Images.SetKeyName(2, "k走2.png")
         Me.ImageList2.Images.SetKeyName(3, "未命名的圖片k.png")
         '
+        'ImageList3
+        '
+        Me.ImageList3.ImageStream = CType(resources.GetObject("ImageList3.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList3.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList3.Images.SetKeyName(0, "dio1.png")
+        Me.ImageList3.Images.SetKeyName(1, "dio2.png")
+        '
+        'ImageList4
+        '
+        Me.ImageList4.ImageStream = CType(resources.GetObject("ImageList4.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList4.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList4.Images.SetKeyName(0, "k1.png")
+        Me.ImageList4.Images.SetKeyName(1, "k2.png")
+        '
+        'ImageList5
+        '
+        Me.ImageList5.ImageStream = CType(resources.GetObject("ImageList5.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList5.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList5.Images.SetKeyName(0, "dio防.png")
+        '
+        'ImageList6
+        '
+        Me.ImageList6.ImageStream = CType(resources.GetObject("ImageList6.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList6.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList6.Images.SetKeyName(0, "k防.png")
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.jjba_clocktower_10249_thumb
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(908, 510)
+        Me.ClientSize = New System.Drawing.Size(1362, 748)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ProgressBar2)
         Me.Controls.Add(Me.ProgressBar1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "格鬥遊戲"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -158,5 +195,9 @@ Partial Class Form1
     Friend WithEvents Timer3 As System.Windows.Forms.Timer
     Friend WithEvents Timer4 As System.Windows.Forms.Timer
     Friend WithEvents ImageList2 As System.Windows.Forms.ImageList
+    Friend WithEvents ImageList3 As System.Windows.Forms.ImageList
+    Friend WithEvents ImageList4 As System.Windows.Forms.ImageList
+    Friend WithEvents ImageList5 As System.Windows.Forms.ImageList
+    Friend WithEvents ImageList6 As System.Windows.Forms.ImageList
 
 End Class

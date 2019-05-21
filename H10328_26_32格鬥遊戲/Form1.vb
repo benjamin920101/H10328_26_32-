@@ -37,6 +37,9 @@
         Timer1.Enabled = True
         Timer2.Enabled = True
         If e.KeyCode = Keys.J Then   '按J(P1攻擊P2)鍵
+
+            PictureBox1.Image = ImageList3.Images(1)
+            
             If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
                 If ProgressBar2.Value > 5 Then
                     ProgressBar2.Value -= 5
@@ -52,6 +55,9 @@
         End If
 
         If e.KeyCode = Keys.M Then   '按M(P2攻擊P1)鍵
+
+            PictureBox2.Image = ImageList4.Images(1)
+
             If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
                 If ProgressBar1.Value > 5 Then
                     ProgressBar1.Value -= 5
@@ -118,12 +124,14 @@
         End If
 
         If e.KeyCode = Keys.B Then   '按B(防禦)鍵
+            PictureBox1.Image = ImageList5.Images(0)
             defense2 = 5
         End If
+
         If e.KeyCode = Keys.K Then   '按K(防禦)鍵
+            PictureBox2.Image = ImageList6.Images(0)
             defense = 5
         End If
-
     End Sub
 
     Private Sub Form1_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyUp
