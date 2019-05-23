@@ -5,7 +5,9 @@
     Dim replay As Integer
     Dim name_in1, name_in2 As String
     Dim jump As Single = 10 : Dim jump2 As Single = 10
-    Dim defense As Single = 0 : Dim defense2 As Single = 0
+    Dim attack As Single = 5 : Dim attack2 As Single = 5
+    Dim a As Boolean = True : Dim b As Boolean = True
+    Dim index_hit1 As Integer = 0 : Dim index_hit2 As Integer = 0
 
     Sub hit_sound() '攻擊時的聲音的副程式
         player2.URL = My.Application.Info.DirectoryPath & "\hit.mp3"
@@ -32,18 +34,16 @@
         player2.controls.stop()
     End Sub
 
-
     Private Sub Form1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         Timer1.Enabled = True
         Timer2.Enabled = True
-        If e.KeyCode = Keys.J Then   '按J(P1攻擊P2)鍵
-
-            PictureBox1.Image = ImageList3.Images(1)
-            
+        If e.KeyCode = Keys.J And a = True Then   '按J(P1攻擊P2)鍵
+            a = False
             If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
                 If ProgressBar2.Value > 5 Then
-                    ProgressBar2.Value -= 5
-                    ProgressBar2.Value += defense2
+                    ProgressBar2.Value -= attack
+                    Timer7.Enabled = True
+
                     Call hit_sound()    '呼叫攻擊時的聲音的副程式
                 Else
                     ProgressBar2.Value = 0
@@ -54,14 +54,11 @@
             End If
         End If
 
-        If e.KeyCode = Keys.M Then   '按M(P2攻擊P1)鍵
-
-            PictureBox2.Image = ImageList4.Images(1)
-
+        If e.KeyCode = Keys.M And b = True Then   '按M(P2攻擊P1)鍵
+            b = False
             If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
                 If ProgressBar1.Value > 5 Then
-                    ProgressBar1.Value -= 5
-                    ProgressBar1.Value += defense
+                    ProgressBar1.Value -= attack2
                     Call hit_sound()    '呼叫攻擊時的聲音的副程式
                 Else
                     ProgressBar1.Value = 0
@@ -123,26 +120,25 @@
             End If
         End If
 
-        If e.KeyCode = Keys.B Then   '按B(防禦)鍵
+        If e.KeyCode = Keys.K Then   '按K(防禦)鍵
             PictureBox1.Image = ImageList5.Images(0)
-            defense2 = 5
+            attack2 = 0
+            Timer5.Enabled = True
         End If
 
-        If e.KeyCode = Keys.K Then   '按K(防禦)鍵
+        If e.KeyCode = Keys.Oemcomma Then'按<(防禦)鍵
             PictureBox2.Image = ImageList6.Images(0)
-            defense = 5
-        End If
-    End Sub
-
-    Private Sub Form1_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyUp
-
-        If e.KeyCode = Keys.B Then   '按B(防禦)鍵
-            defense2 = 0
-        End If
-        If e.KeyCode = Keys.K Then   '按K(防禦)鍵
-            defense2 = 0
+            attack = 0
+            Timer6.Enabled = True
         End If
 
+        If e.KeyCode = Keys.OemQuestion Then
+            Dim a As Boolean = True '必殺
+        End If
+
+        If e.KeyCode = Keys.L Then
+            Dim b As Boolean = True '必殺
+        End If
     End Sub
 
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -183,4 +179,67 @@
             PictureBox2.Top -= jump2 ^ 2 - (jump2 - 1.5) ^ 2
         End If
     End Sub
+
+    Private Sub Timer5_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer5.Tick
+        attack2 = 0 '1P防禦時間限制
+        Timer5.Enabled = False
+        If Timer5.Enabled = False Then
+            attack2 = 5
+        End If
+
+    End Sub
+
+    Private Sub Timer6_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer6.Tick
+        attack = 0 '2P防禦時間限制
+        Timer6.Enabled = False
+        If Timer6.Enabled = False Then
+            attack = 5
+        End If
+    End Sub
+
+    Private Sub Timer7_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer7.Tick
+        index_hit1 = 0
+        PictureBox1.Image = ImageList3.Images(index_hit1)
+        Timer7.Enabled = False
+        If index_hit1 < 1 Then
+            index_hit1 += 1
+        Else
+            index_hit1 = 0
+        End If
+        If Timer7.Enabled = False Then '1P攻擊間隔時間
+            a = True
+        End If
+    End Sub
+
+    Private Sub Timer8_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer8.Tick
+        index_hit2 = 0
+        index_hit2 += 1
+        Timer8.Enabled = False
+        PictureBox2.Image = ImageList4.Images(index_hit2)
+        If index_hit2 < 0 Then
+            index_hit2 = 0
+        End If
+        If Timer8.Enabled = False Then '2P攻擊間隔時間
+            b = True
+        End If
+    End Sub
 End Class
+    '5/21[bug]按住不放會一直對對方減血, 攻擊時換圖片太快
+    '解決方法(尚未解決)By陳秉昊(for 攻擊時換圖片太快)(5/21_16:07完成):
+        'Timer1_Tick:
+        'timer1.enabled=false
+        'timer5.enabled=true
+        '[add] Timer5
+        'Timer5_Tick:
+        'timer1.false
+        'timer6依此類推
+    '草稿By陳秉昊_16:09:
+        '[add] Timer7
+        'hit = true}
+    '5/21_17:14由胡豐禾和陳秉昊討論:
+        '1P=J攻擊{5_22_09:09_OK}
+        '1P=K防禦{5_22_09:09_OK}
+        '1P=L必殺{5_22_09:09_not_yet}
+        '2P=M攻擊{5_22_09:09_OK}
+        '2P=<防禦{5_22_09:09_OK}
+        '2P=?必殺{5_22_09:09_not_yet}

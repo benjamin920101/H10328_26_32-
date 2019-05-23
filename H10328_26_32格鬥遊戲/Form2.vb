@@ -35,11 +35,7 @@
     Private Sub Button2_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button2.MouseMove
         Button2.BackColor = Color.Blue
     End Sub
-
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-        MsgBox("用鍵盤控制", 0 + 64, "說明")
-    End Sub
-
+ 
     Private Sub Form2_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
     End Sub
 
