@@ -98,6 +98,7 @@
         End If
 
         If e.KeyCode = Keys.Up Then   '按上鍵
+            Timer1.Enabled = True
             Timer4.Enabled = True
         End If
 
@@ -125,6 +126,7 @@
         End If
 
         If e.KeyCode = Keys.W Then   '按W上鍵
+            Timer1.Enabled = True
             Timer3.Enabled = True
         End If
 
