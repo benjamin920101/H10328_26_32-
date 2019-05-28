@@ -35,14 +35,17 @@
     End Sub
 
     Private Sub Form1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
-        Timer1.Enabled = True
+        Timer1.Enabled = False
+        'Timer1.Enabled = True
         Timer2.Enabled = True
         If e.KeyCode = Keys.J And a = True Then   '按J(P1攻擊P2)鍵
+            Timer1.Enabled = False
+            Timer7.Enabled = True
             a = False
             If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
                 If ProgressBar2.Value > 5 Then
                     ProgressBar2.Value -= attack
-                    Timer7.Enabled = True
+
 
                     Call hit_sound()    '呼叫攻擊時的聲音的副程式
                 Else
@@ -52,9 +55,14 @@
                     Call die_show_do()  '呼叫你死了!重玩嗎?的副程式
                 End If
             End If
+
+            Label3.Text &= attack & "(j_P1攻擊P2),"
+
         End If
 
         If e.KeyCode = Keys.M And b = True Then   '按M(P2攻擊P1)鍵
+            Timer1.Enabled = False
+            Timer8.Enabled = True
             b = False
             If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
                 If ProgressBar1.Value > 5 Then
@@ -67,9 +75,13 @@
                     Call die_show_do()  '呼叫你死了!重玩嗎?的副程式
                 End If
             End If
+
+            Label4.Text &= attack2 & "b:" & str(b) & "(M(P2攻擊P1)),"
+
         End If
 
         If e.KeyCode = Keys.Left Then   '按左鍵
+            Timer1.Enabled = True
             PictureBox2.Left -= 10
             PictureBox2.Left -= 10
             If PictureBox2.Left < 0 Then    '擋左牆
@@ -78,6 +90,7 @@
         End If
 
         If e.KeyCode = Keys.Right Then   '按右鍵
+            Timer1.Enabled = True
             PictureBox2.Left += 10
             If PictureBox2.Left > Me.Width - 20 - PictureBox2.Width Then    '擋右牆
                 PictureBox2.Left = Me.Width - 20 - PictureBox2.Width
@@ -96,6 +109,7 @@
         End If
 
         If e.KeyCode = Keys.A Then   '按A左鍵
+            Timer1.Enabled = True
             PictureBox1.Left -= 10
             If PictureBox1.Left < 0 Then    '擋左牆
                 PictureBox1.Left = 0
@@ -103,6 +117,7 @@
         End If
 
         If e.KeyCode = Keys.D Then   '按D右鍵
+            Timer1.Enabled = True
             PictureBox1.Left += 10
             If PictureBox1.Left > Me.Width - 20 - PictureBox1.Width Then    '擋右牆
                 PictureBox1.Left = Me.Width - 20 - PictureBox1.Width
@@ -124,12 +139,18 @@
             PictureBox1.Image = ImageList5.Images(0)
             attack2 = 0
             Timer5.Enabled = True
+
+            Label4.Text &= attack2 & "(k),"
+
         End If
 
         If e.KeyCode = Keys.Oemcomma Then'按<(防禦)鍵
             PictureBox2.Image = ImageList6.Images(0)
             attack = 0
             Timer6.Enabled = True
+
+            Label3.Text &= attack & "(<),"
+
         End If
 
         If e.KeyCode = Keys.OemQuestion Then
@@ -138,6 +159,10 @@
 
         If e.KeyCode = Keys.L Then
             Dim b As Boolean = True '必殺
+        End If
+
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
         End If
     End Sub
 
@@ -223,6 +248,14 @@
             b = True
         End If
     End Sub
+
+    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
+        Label3.Text &= attack & ","
+    End Sub
+
+    Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label4.Click
+        Label4.Text &= attack2 & "," & "b:" & str(b)
+    End Sub
 End Class
     '5/21[bug]按住不放會一直對對方減血, 攻擊時換圖片太快
     '解決方法(尚未解決)By陳秉昊(for 攻擊時換圖片太快)(5/21_16:07完成):
@@ -243,3 +276,4 @@ End Class
         '2P=M攻擊{5_22_09:09_OK}
         '2P=<防禦{5_22_09:09_OK}
         '2P=?必殺{5_22_09:09_not_yet}
+        'Q:attack用幾次

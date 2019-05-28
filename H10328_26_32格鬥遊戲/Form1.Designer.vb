@@ -44,25 +44,25 @@ Partial Class Form1
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer7 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer8 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(16, 27)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.ProgressBar1.Location = New System.Drawing.Point(12, 21)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(579, 53)
+        Me.ProgressBar1.Size = New System.Drawing.Size(434, 43)
         Me.ProgressBar1.TabIndex = 0
         Me.ProgressBar1.Value = 100
         '
         'ProgressBar2
         '
-        Me.ProgressBar2.Location = New System.Drawing.Point(616, 27)
-        Me.ProgressBar2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.ProgressBar2.Location = New System.Drawing.Point(462, 21)
         Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(579, 53)
+        Me.ProgressBar2.Size = New System.Drawing.Size(434, 43)
         Me.ProgressBar2.TabIndex = 1
         Me.ProgressBar2.Value = 100
         '
@@ -81,20 +81,18 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 8)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(13, 7)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(22, 15)
+        Me.Label1.Size = New System.Drawing.Size(17, 12)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "P1"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(613, 7)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(460, 5)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(22, 15)
+        Me.Label2.Size = New System.Drawing.Size(17, 12)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "P2"
         '
@@ -110,10 +108,9 @@ Partial Class Form1
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.未命名的圖片k
-        Me.PictureBox2.Location = New System.Drawing.Point(901, 435)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox2.Location = New System.Drawing.Point(675, 326)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(265, 202)
+        Me.PictureBox2.Size = New System.Drawing.Size(199, 161)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
@@ -122,10 +119,9 @@ Partial Class Form1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.dio
-        Me.PictureBox1.Location = New System.Drawing.Point(59, 327)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(44, 238)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(174, 312)
+        Me.PictureBox1.Size = New System.Drawing.Size(131, 249)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -181,22 +177,41 @@ Partial Class Form1
         '
         'Timer8
         '
-        Me.Timer8.Interval = 500
+        Me.Timer8.Interval = 200
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(29, 76)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 12)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "attack:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(23, 101)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(41, 12)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "attack2:"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.jjba_clocktower_10249_thumb
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1211, 623)
+        Me.ClientSize = New System.Drawing.Size(908, 499)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ProgressBar2)
         Me.Controls.Add(Me.ProgressBar1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "Form1"
         Me.Text = "格鬥遊戲"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -225,5 +240,7 @@ Partial Class Form1
     Friend WithEvents Timer7 As System.Windows.Forms.Timer
     Friend WithEvents Timer8 As System.Windows.Forms.Timer
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class
