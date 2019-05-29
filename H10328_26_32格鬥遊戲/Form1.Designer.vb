@@ -50,6 +50,8 @@ Partial Class Form1
         Me.ProgressBar4 = New System.Windows.Forms.ProgressBar()
         Me.ImageList7 = New System.Windows.Forms.ImageList(Me.components)
         Me.ImageList8 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Timer9 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer10 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -177,11 +179,9 @@ Partial Class Form1
         '
         'Timer7
         '
-        Me.Timer7.Interval = 200
         '
         'Timer8
         '
-        Me.Timer8.Interval = 200
         '
         'Label3
         '
@@ -205,8 +205,8 @@ Partial Class Form1
         '
         'ProgressBar3
         '
-        Me.ProgressBar3.Location = New System.Drawing.Point(85, 78)
-        Me.ProgressBar3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProgressBar3.Location = New System.Drawing.Point(96, 77)
+        Me.ProgressBar3.Margin = New System.Windows.Forms.Padding(2)
         Me.ProgressBar3.Name = "ProgressBar3"
         Me.ProgressBar3.Size = New System.Drawing.Size(350, 35)
         Me.ProgressBar3.TabIndex = 8
@@ -216,7 +216,7 @@ Partial Class Form1
         Me.ProgressBar4.BackColor = System.Drawing.SystemColors.HotTrack
         Me.ProgressBar4.ForeColor = System.Drawing.Color.Aqua
         Me.ProgressBar4.Location = New System.Drawing.Point(461, 79)
-        Me.ProgressBar4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProgressBar4.Margin = New System.Windows.Forms.Padding(2)
         Me.ProgressBar4.Name = "ProgressBar4"
         Me.ProgressBar4.Size = New System.Drawing.Size(378, 33)
         Me.ProgressBar4.TabIndex = 9
@@ -234,6 +234,12 @@ Partial Class Form1
         Me.ImageList8.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList8.Images.SetKeyName(0, "k必殺.png")
         Me.ImageList8.Images.SetKeyName(1, "k必殺後續.png")
+        '
+        'Timer9
+        '
+        '
+        'Timer10
+        '
         '
         'Form1
         '
@@ -286,5 +292,7 @@ Partial Class Form1
     Friend WithEvents ProgressBar4 As System.Windows.Forms.ProgressBar
     Friend WithEvents ImageList7 As System.Windows.Forms.ImageList
     Friend WithEvents ImageList8 As System.Windows.Forms.ImageList
+    Friend WithEvents Timer9 As System.Windows.Forms.Timer
+    Friend WithEvents Timer10 As System.Windows.Forms.Timer
 
 End Class

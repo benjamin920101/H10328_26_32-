@@ -8,6 +8,7 @@
     Dim attack As Single = 5 : Dim attack2 As Single = 5
     Dim a As Boolean = True : Dim b As Boolean = True
     Dim index_hit1 As Integer = 0 : Dim index_hit2 As Integer = 0
+    Dim index_bighit1 As Integer = 0 : Dim index_bighit2 As Integer = 0
 
     Sub hit_sound() '攻擊時的聲音的副程式
         player2.URL = My.Application.Info.DirectoryPath & "\hit.mp3"
@@ -175,7 +176,8 @@
 
         End If
 
-        If e.KeyCode = Keys.OemQuestion And ProgressBar4.Value = 100 Then
+        If e.KeyCode = Keys.OemQuestion And ProgressBar4.Value = 100 Then   'P2打P1
+            Timer10.Enabled = True
             If ProgressBar4.Value = 100 Then
                 ProgressBar4.Value -= 100
             End If
@@ -193,7 +195,8 @@
             End If
         End If
 
-        If e.KeyCode = Keys.L And ProgressBar3.Value = 100 Then
+        If e.KeyCode = Keys.L And ProgressBar3.Value = 100 Then 'P1打P2
+            Timer9.Enabled = True
             If ProgressBar3.Value = 100 Then
                 ProgressBar3.Value -= 100
             End If
@@ -273,13 +276,12 @@
     End Sub
 
     Private Sub Timer7_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer7.Tick
-        index_hit1 = 0
         PictureBox1.Image = ImageList3.Images(index_hit1)
-        Timer7.Enabled = False
         If index_hit1 < 1 Then
             index_hit1 += 1
         Else
             index_hit1 = 0
+            Timer7.Enabled = False
         End If
         If Timer7.Enabled = False Then '1P攻擊間隔時間
             a = True
@@ -287,12 +289,12 @@
     End Sub
 
     Private Sub Timer8_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer8.Tick
-        index_hit2 = 0
-        index_hit2 += 1
-        Timer8.Enabled = False
         PictureBox2.Image = ImageList4.Images(index_hit2)
-        If index_hit2 < 0 Then
+        If index_hit2 < 1 Then
+            index_hit2 += 1
+        Else
             index_hit2 = 0
+            Timer8.Enabled = False
         End If
         If Timer8.Enabled = False Then '2P攻擊間隔時間
             b = True
@@ -305,6 +307,26 @@
 
     Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label4.Click
         Label4.Text &= attack2 & "," & "b:" & str(b)
+    End Sub
+
+    Private Sub Timer9_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer9.Tick
+        PictureBox1.Image = ImageList7.Images(index_bighit1)
+        If index_bighit1 < 1 Then
+            index_bighit1 += 1
+        Else
+            index_bighit1 = 0
+            Timer9.Enabled = False
+        End If
+    End Sub
+
+    Private Sub Timer10_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer10.Tick
+        PictureBox2.Image = ImageList8.Images(index_bighit2)
+        If index_bighit2 < 1 Then
+            index_bighit2 += 1
+        Else
+            index_bighit2 = 0
+            Timer10.Enabled = False
+        End If
     End Sub
 End Class
     '5/21[bug]按住不放會一直對對方減血, 攻擊時換圖片太快
