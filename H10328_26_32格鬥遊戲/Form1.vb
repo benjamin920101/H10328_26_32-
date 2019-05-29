@@ -22,6 +22,8 @@
         If replay = 6 Then
             ProgressBar1.Value = ProgressBar1.Maximum
             ProgressBar2.Value = ProgressBar2.Maximum
+            ProgressBar3.Value = ProgressBar3.Minimum
+            ProgressBar4.Value = ProgressBar4.Minimum
             player1.controls.play()
         Else
             player1.close()
@@ -42,9 +44,19 @@
             Timer1.Enabled = False
             Timer7.Enabled = True
             a = False
-            If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
+            If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width And PictureBox2.Top < PictureBox1.Top + PictureBox1.Height And PictureBox1.Top < PictureBox2.Top + PictureBox2.Height Then
+                'Label1.Text = "1.(dio尾)" & PictureBox1.Top + PictureBox1.Height & "[>]2.(k_top)" & PictureBox2.Top
+                'Label2.Text = "1.(dio_top)" & PictureBox1.Top & "[<]2.(k尾)" & PictureBox2.Top + PictureBox2.Height
+
+
                 If ProgressBar2.Value > 5 Then
                     ProgressBar2.Value -= attack
+
+                    If ProgressBar3.Value >= 100 Then
+                        ProgressBar3.Value = 100
+                    Else
+                        ProgressBar3.Value += 10
+                    End If
 
 
                     Call hit_sound()    '呼叫攻擊時的聲音的副程式
@@ -56,7 +68,8 @@
                 End If
             End If
 
-            Label3.Text &= attack & "(j_P1攻擊P2),"
+
+            Label3.Text &= attack & ", a:" & Str(a) & "(j_P1攻擊P2),"
 
         End If
 
@@ -64,8 +77,16 @@
             Timer1.Enabled = False
             Timer8.Enabled = True
             b = False
-            If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
+            If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width And PictureBox2.Top < PictureBox1.Top + PictureBox1.Height And PictureBox1.Top < PictureBox2.Top + PictureBox2.Height Then
                 If ProgressBar1.Value > 5 Then
+
+
+                    If ProgressBar4.Value >= 100 Then
+                        ProgressBar4.Value = 100
+                    Else
+                        ProgressBar4.Value += 10
+                    End If
+
                     ProgressBar1.Value -= attack2
                     Call hit_sound()    '呼叫攻擊時的聲音的副程式
                 Else
@@ -76,13 +97,12 @@
                 End If
             End If
 
-            Label4.Text &= attack2 & "b:" & str(b) & "(M(P2攻擊P1)),"
+            Label4.Text &= attack2 & ", b:" & Str(b) & "(M(P2攻擊P1)),"
 
         End If
 
         If e.KeyCode = Keys.Left Then   '按左鍵
             Timer1.Enabled = True
-            PictureBox2.Left -= 10
             PictureBox2.Left -= 10
             If PictureBox2.Left < 0 Then    '擋左牆
                 PictureBox2.Left = 0
@@ -146,7 +166,7 @@
 
         End If
 
-        If e.KeyCode = Keys.Oemcomma Then'按<(防禦)鍵
+        If e.KeyCode = Keys.Oemcomma Then   '按<(防禦)鍵
             PictureBox2.Image = ImageList6.Images(0)
             attack = 0
             Timer6.Enabled = True
@@ -155,12 +175,40 @@
 
         End If
 
-        If e.KeyCode = Keys.OemQuestion Then
-            Dim a As Boolean = True '必殺
+        If e.KeyCode = Keys.OemQuestion And ProgressBar4.Value = 100 Then
+            If ProgressBar4.Value = 100 Then
+                ProgressBar4.Value -= 100
+            End If
+
+            If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
+                If ProgressBar1.Value > 30 Then
+                    ProgressBar1.Value -= 30
+                    Call hit_sound()    '呼叫攻擊時的聲音的副程式
+                Else
+                    ProgressBar1.Value = 0
+                    name_in1 = name1
+                    name_in2 = name2
+                    Call die_show_do()  '呼叫你死了!重玩嗎?的副程式
+                End If
+            End If
         End If
 
-        If e.KeyCode = Keys.L Then
-            Dim b As Boolean = True '必殺
+        If e.KeyCode = Keys.L And ProgressBar3.Value = 100 Then
+            If ProgressBar3.Value = 100 Then
+                ProgressBar3.Value -= 100
+            End If
+
+            If PictureBox2.Left < PictureBox1.Left + PictureBox1.Width And PictureBox1.Left < PictureBox2.Left + PictureBox2.Width Then
+                If ProgressBar2.Value > 30 Then
+                    ProgressBar2.Value -= 30
+                    Call hit_sound()    '呼叫攻擊時的聲音的副程式
+                Else
+                    ProgressBar2.Value = 0
+                    name_in1 = name1
+                    name_in2 = name2
+                    Call die_show_do()  '呼叫你死了!重玩嗎?的副程式
+                End If
+            End If
         End If
 
         If e.KeyCode = Keys.Escape Then
@@ -192,7 +240,7 @@
             jump = 10
         Else
             jump -= 0.5
-            PictureBox1.Top -= jump ^ 2 - (jump - 1.5) ^ 2
+            PictureBox1.Top -= jump ^ 2 - (jump - 2) ^ 2
         End If
     End Sub
 
@@ -203,7 +251,7 @@
             jump2 = 10
         Else
             jump2 -= 0.5
-            PictureBox2.Top -= jump2 ^ 2 - (jump2 - 1.5) ^ 2
+            PictureBox2.Top -= jump2 ^ 2 - (jump2 - 2) ^ 2
         End If
     End Sub
 

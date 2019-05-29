@@ -46,6 +46,10 @@ Partial Class Form1
         Me.Timer8 = New System.Windows.Forms.Timer(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.ProgressBar3 = New System.Windows.Forms.ProgressBar()
+        Me.ProgressBar4 = New System.Windows.Forms.ProgressBar()
+        Me.ImageList7 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList8 = New System.Windows.Forms.ImageList(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -108,9 +112,9 @@ Partial Class Form1
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.未命名的圖片k
-        Me.PictureBox2.Location = New System.Drawing.Point(675, 326)
+        Me.PictureBox2.Location = New System.Drawing.Point(675, 375)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(199, 161)
+        Me.PictureBox2.Size = New System.Drawing.Size(146, 112)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
@@ -119,9 +123,9 @@ Partial Class Form1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.dio
-        Me.PictureBox1.Location = New System.Drawing.Point(44, 238)
+        Me.PictureBox1.Location = New System.Drawing.Point(44, 293)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(131, 249)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 194)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -182,20 +186,54 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 76)
+        Me.Label3.Location = New System.Drawing.Point(23, 118)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 12)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "attack:"
+        Me.Label3.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(23, 101)
+        Me.Label4.Location = New System.Drawing.Point(23, 139)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 12)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "attack2:"
+        Me.Label4.Visible = False
+        '
+        'ProgressBar3
+        '
+        Me.ProgressBar3.Location = New System.Drawing.Point(85, 78)
+        Me.ProgressBar3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProgressBar3.Name = "ProgressBar3"
+        Me.ProgressBar3.Size = New System.Drawing.Size(350, 35)
+        Me.ProgressBar3.TabIndex = 8
+        '
+        'ProgressBar4
+        '
+        Me.ProgressBar4.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.ProgressBar4.ForeColor = System.Drawing.Color.Aqua
+        Me.ProgressBar4.Location = New System.Drawing.Point(461, 79)
+        Me.ProgressBar4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProgressBar4.Name = "ProgressBar4"
+        Me.ProgressBar4.Size = New System.Drawing.Size(378, 33)
+        Me.ProgressBar4.TabIndex = 9
+        '
+        'ImageList7
+        '
+        Me.ImageList7.ImageStream = CType(resources.GetObject("ImageList7.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList7.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList7.Images.SetKeyName(0, "dio必殺1.png")
+        Me.ImageList7.Images.SetKeyName(1, "dio必殺2.png")
+        '
+        'ImageList8
+        '
+        Me.ImageList8.ImageStream = CType(resources.GetObject("ImageList8.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList8.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList8.Images.SetKeyName(0, "k必殺.png")
+        Me.ImageList8.Images.SetKeyName(1, "k必殺後續.png")
         '
         'Form1
         '
@@ -203,7 +241,9 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.jjba_clocktower_10249_thumb
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(908, 499)
+        Me.ClientSize = New System.Drawing.Size(913, 499)
+        Me.Controls.Add(Me.ProgressBar4)
+        Me.Controls.Add(Me.ProgressBar3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -242,5 +282,9 @@ Partial Class Form1
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents ProgressBar3 As System.Windows.Forms.ProgressBar
+    Friend WithEvents ProgressBar4 As System.Windows.Forms.ProgressBar
+    Friend WithEvents ImageList7 As System.Windows.Forms.ImageList
+    Friend WithEvents ImageList8 As System.Windows.Forms.ImageList
 
 End Class
