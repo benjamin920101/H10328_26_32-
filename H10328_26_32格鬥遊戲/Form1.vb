@@ -2,6 +2,7 @@
     Dim index As Integer
     Dim player1 As New WMPLib.WindowsMediaPlayer
     Dim player2 As New WMPLib.WindowsMediaPlayer
+    Dim muda As New WMPLib.WindowsMediaPlayer
     Dim replay As Integer
     Dim name_in1, name_in2 As String
     Dim jump As Single = 10 : Dim jump2 As Single = 10
@@ -14,6 +15,11 @@
         player2.URL = My.Application.Info.DirectoryPath & "\hit.mp3"
         player2.settings.setMode("loop", False)
         player2.controls.play()
+    End Sub
+    Sub muda_sound() '攻擊時的聲音的副程式
+        muda.URL = My.Application.Info.DirectoryPath & "\dio-brando-muda-muda_3.mp3"
+        muda.settings.setMode("loop", False)
+        muda.controls.play()
     End Sub
 
     Sub die_show_do()   '你輸了!重玩嗎?的副程式
@@ -205,6 +211,7 @@
                 If ProgressBar2.Value > 30 Then
                     ProgressBar2.Value -= 30
                     Call hit_sound()    '呼叫攻擊時的聲音的副程式
+                    Call muda_sound()
                 Else
                     ProgressBar2.Value = 0
                     name_in1 = name1
@@ -327,6 +334,10 @@
             index_bighit2 = 0
             Timer10.Enabled = False
         End If
+    End Sub
+
+    Private Sub Timer2_Tick(sender As System.Object, e As System.EventArgs) Handles Timer2.Tick
+
     End Sub
 End Class
     '5/21[bug]按住不放會一直對對方減血, 攻擊時換圖片太快
